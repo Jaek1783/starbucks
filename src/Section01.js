@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
 import main from "./img/main/bg.jpeg";
 import main01 from "./img/main/main01.png";
@@ -6,14 +6,34 @@ import main02 from "./img/main/main02.png";
 import main03 from "./img/main/main03.png";
 import mainTitle from "./img/main/mainTitle.png";
 const Section01 =()=>{
+    const opacityRef = useRef(null);
+
+useEffect(()=>{
+    // console.log(opacityRef.current.children.length);
+    const imgLength = opacityRef.current.children.length;
+    // for(let i = 0; i<imgLength; i++){
+    //     console.log(i);
+    //     opacityRef.current.children[i].style.opacity="1";
+    //     setInterval(()=>{
+    //     },1000);
+    // }
+    let i = 0;
+    const timer = setInterval(()=>{
+        if(i < imgLength  ){
+            i++;
+        opacityRef.current.children[i-1].style.opacity="1";
+        }
+    },500);
+    return ()=> clearInterval(timer);
+},[]);
     return(
-        <Container main={main}>
+        <Container main={main} ref={opacityRef}>
             <div className="mainTitle">
-                <div><img src={mainTitle} alt="메인 문구" /></div>
+                <p><img src={mainTitle} alt="메인 문구" /></p>
                 <button>자세히보기</button>
             </div>
-            <div className="mainImg01 mainImg"><img src={main01} alt="메인 이미지01" /></div>
             <div className="mainImg02 mainImg"><img src={main02} alt="메인 이미지02" /></div>
+            <div className="mainImg01 mainImg"><img src={main01} alt="메인 이미지01" /></div>
             <div className="mainImg03 mainImg"><img src={main03} alt="메인 이미지03" /></div>
         </Container>
     )
@@ -27,6 +47,10 @@ display:flex;
 align-items:center;
 padding:120px 3rem 0;
 position:relative;
+div{
+    transition:all 1s ease-in-out;
+    opacity:0;
+}
 div.mainTitle{
     padding-right:6rem;
     text-align:center;

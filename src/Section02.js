@@ -49,7 +49,7 @@ display:flex;
 const SliderContainer = styled.div`
 height:1.5rem;
 overflow:hidden;
-padding-left:1rem;
+padding:0 1rem;
 `;
 const Promotion = styled.div`
 width:50%;

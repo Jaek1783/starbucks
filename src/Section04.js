@@ -4,12 +4,12 @@ import styled from "styled-components";
 import bg from "./img/section04/bg.jpeg";
 import beans from "./img/section04/beans.png";
 import beansText from "./img/section04/beansText.png";
-const Section04 = ()=> {
+const Section04 = (props)=> {
     return(
-        <Container bg={bg}>
+        <Container bg={bg} y={props.y}>
             <div className="beans"><img src={beans} alt="커피콩" /></div>
             <div className="beansText">
-                <img src={beansText} alt="" />
+                <img src={beansText} alt="문구 이미지" />
                 <button>자세히보기</button>
             </div>
         </Container>
@@ -21,16 +21,20 @@ const Container = styled.div`
     background:no-repeat center url(${props=>props.bg});
     background-size:cover;
     position:relative;
+        div{
+            opacity:${props=>props.y > 330 ? "1":"0"};
+            transition:all 1s ease-in-out;
+        }
         .beans{
             width:10rem;
             position:absolute;
             top:18%;
-            left:26%;
+            left:${props=>props.y >330 ? "26%":"0"};
         }
         .beansText{
             position:absolute;
             top:30%;
-            right:15%;
+            right:${props=>props.y >330 ? "15%":"0"};
             width:350px;
                 button{
                     padding:.5rem 2rem;

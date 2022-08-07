@@ -29,7 +29,6 @@ function App() {
   }
 
   const { y } = useScroll();
-  // console.log(y);
   return (
     <div className="App">
       <Background bg={bg}></Background>
@@ -38,11 +37,11 @@ function App() {
         <Section01/>
         <Section02/>
         <Section03/>
-        <Section04/>
+        <Section04  y={y}/>
         <Section05/>
-        <Section06/>
+        <Section06 y={y}/>
         <Section07/>
-        <Section08/>
+        <Section08 y={y}/>
       </div>
       <Footer>이 사이트는 포트폴리오를 위해 제작되었습니다.</Footer>
     </div>

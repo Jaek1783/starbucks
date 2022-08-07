@@ -12,3 +12,7 @@ img{
 button:hover{
   text-decoration: underline;
 }
+
+.App{
+  max-width:1440px;
+}
