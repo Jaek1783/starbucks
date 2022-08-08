@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/starbucks/static/css/main.23344345.css",
+    "main.js": "/starbucks/static/js/main.5989c609.js",
+    "static/media/bg.jpeg": "/starbucks/static/media/bg.32dfd6ffb136aefad411.jpeg",
+    "static/media/pick.png": "/starbucks/static/media/pick.55c852202db92c827530.png",
+    "static/media/visual.png": "/starbucks/static/media/visual.b2311bf4a85f111a0eb1.png",
+    "static/media/img1.png": "/starbucks/static/media/img1.7151f275cb085fdf3054.png",
+    "static/media/leaf2.png": "/starbucks/static/media/leaf2.0a6f9eccf4b42aa15d3d.png",
+    "static/media/beans.png": "/starbucks/static/media/beans.1278d23afbde9bb8accb.png",
+    "static/media/main02.png": "/starbucks/static/media/main02.25e81e1340a792cfd2d3.png",
+    "static/media/main03.png": "/starbucks/static/media/main03.5d184e8450ad539337b5.png",
+    "static/media/leaf1.png": "/starbucks/static/media/leaf1.13b985a1bec6c81d380a.png",
+    "static/media/main01.png": "/starbucks/static/media/main01.ffcc549a263d712b6a29.png",
+    "static/media/bg2.png": "/starbucks/static/media/bg2.7e0564719aa7ab201de6.png",
+    "static/media/img2.png": "/starbucks/static/media/img2.3f8031016875f90e79ab.png",
+    "static/media/rewards.png": "/starbucks/static/media/rewards.f55b42b7327ec99f2b4c.png",
+    "static/media/img4.png": "/starbucks/static/media/img4.4472134e4101f5286946.png",
+    "static/media/img3.png": "/starbucks/static/media/img3.625994f8780e70ca8c04.png",
+    "static/media/title02.png": "/starbucks/static/media/title02.9b5771e475cc58263619.png",
+    "static/media/logo.png": "/starbucks/static/media/logo.b41bd654180b67006c23.png",
+    "static/media/title.png": "/starbucks/static/media/title.9e80714f06f37df1e3aa.png",
+    "index.html": "/starbucks/index.html",
+    "main.23344345.css.map": "/starbucks/static/css/main.23344345.css.map",
+    "main.5989c609.js.map": "/starbucks/static/js/main.5989c609.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23344345.css",
+    "static/js/main.5989c609.js"
+  ]
+}
