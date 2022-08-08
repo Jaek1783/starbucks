@@ -9,14 +9,8 @@ const Section01 =()=>{
     const opacityRef = useRef(null);
 
 useEffect(()=>{
-    // console.log(opacityRef.current.children.length);
+
     const imgLength = opacityRef.current.children.length;
-    // for(let i = 0; i<imgLength; i++){
-    //     console.log(i);
-    //     opacityRef.current.children[i].style.opacity="1";
-    //     setInterval(()=>{
-    //     },1000);
-    // }
     let i = 0;
     const timer = setInterval(()=>{
         if(i < imgLength  ){
@@ -28,13 +22,15 @@ useEffect(()=>{
 },[]);
     return(
         <Container main={main} ref={opacityRef}>
-            <div className="mainTitle">
-                <p><img src={mainTitle} alt="메인 문구" /></p>
-                <button>자세히보기</button>
-            </div>
-            <div className="mainImg02 mainImg"><img src={main02} alt="메인 이미지02" /></div>
-            <div className="mainImg01 mainImg"><img src={main01} alt="메인 이미지01" /></div>
-            <div className="mainImg03 mainImg"><img src={main03} alt="메인 이미지03" /></div>
+            <Contents>
+                <div className="mainTitle">
+                    <p><img src={mainTitle} alt="메인 문구" /></p>
+                    <button>자세히보기</button>
+                </div>
+                <div className="mainImg02 mainImg"><img src={main02} alt="메인 이미지02" /></div>
+                <div className="mainImg01 mainImg"><img src={main01} alt="메인 이미지01" /></div>
+                <div className="mainImg03 mainImg"><img src={main03} alt="메인 이미지03" /></div>
+            </Contents>
         </Container>
     )
 }; export default Section01;
@@ -46,11 +42,12 @@ background-size:cover;
 display:flex;
 align-items:center;
 padding:120px 3rem 0;
-position:relative;
-div{
-    transition:all 1s ease-in-out;
-    opacity:0;
-}
+position:relative;   
+`;
+
+const Contents = styled.div`
+transition:all 1s ease-in-out;
+opacity:0;
 div.mainTitle{
     padding-right:6rem;
     text-align:center;
@@ -65,18 +62,26 @@ div.mainTitle{
             font-size:1rem;
         }
 }
+div.mainTitle{
+    position:absolute;
+    top:45%;
+    left:300px;
+}
 div.mainImg{
     position:absolute;
-    top:26%;
+    top:31%;
 }
 div.mainImg01{
-    left:30%;
+    left:37%;
+    // left:700px;
 }
 div.mainImg02{
-    top:35%;
-    left:47%;
+    top:37%;
+    left:48%;
 }
 div.mainImg03{
-    left:68%;
+    left:65%;
 }
+
+
 `;
