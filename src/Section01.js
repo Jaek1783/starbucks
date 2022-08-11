@@ -13,7 +13,7 @@ useEffect(()=>{
     const imgLength = opacityRef.current.children.length;
     let i = 0;
     const timer = setInterval(()=>{
-        if(i < imgLength  ){
+        if(i < imgLength){
             i++;
         opacityRef.current.children[i-1].style.opacity="1";
         }
@@ -21,8 +21,8 @@ useEffect(()=>{
     return ()=> clearInterval(timer);
 },[]);
     return(
-        <Container main={main} ref={opacityRef}>
-            <Contents>
+        <Container main={main}>
+            <Contents  ref={opacityRef}>
                 <div className="mainTitle">
                     <p><img src={mainTitle} alt="메인 문구" /></p>
                     <button>자세히보기</button>
@@ -46,8 +46,10 @@ position:relative;
 `;
 
 const Contents = styled.div`
-transition:all 1s ease-in-out;
-opacity:0;
+    div{
+        opacity:0;
+        transition:all 1s ease-in-out;
+    }
 div.mainTitle{
     padding-right:6rem;
     text-align:center;
@@ -65,19 +67,18 @@ div.mainTitle{
 div.mainTitle{
     position:absolute;
     top:45%;
-    left:300px;
+    left:10%;
 }
 div.mainImg{
     position:absolute;
     top:31%;
 }
 div.mainImg01{
-    left:37%;
-    // left:700px;
+    left:34%;
 }
 div.mainImg02{
     top:37%;
-    left:48%;
+    left:47%;
 }
 div.mainImg03{
     left:65%;

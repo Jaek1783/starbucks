@@ -23,15 +23,17 @@ useEffect(()=>{
     }
 },[]);
     const MouseOver = (e)=>{
+        console.log("들어왔어");
         const length = subMenuRef.current.children.length;
         for(let i = 0; i < length; i++){
             if(e.target.dataset.idx === subMenuRef.current.children[i].dataset.idx){
                const check = e.target.dataset.idx === subMenuRef.current.children[i].dataset.idx;
                if(check === true){
                 const children = subMenuRef.current.children[i].children[0];
-                children.style.height=500 + "px";
-                console.log("내려가고");
                 children.style.display=`block`;
+                setTimeout(()=>{
+                    children.style.height= 500 + "px";
+                },10);
                }
             }
             else{
@@ -56,7 +58,7 @@ useEffect(()=>{
     };
     const subMenuRef = useRef(null);
     return(
-        <HeaderStyle>
+        <HeaderStyle  onMouseLeave={MouseLeave}>
             <Container>
             <h1><img src={logo} alt="로고" /></h1>
             <div>
@@ -67,7 +69,7 @@ useEffect(()=>{
                     <div>Find a Store</div>
                     <div><img src={search} alt="검색"/></div>
                 </Gnb>
-                <SubGnb ref={subMenuRef} onMouseOver={MouseOver} onMouseLeave={MouseLeave}>
+                <SubGnb ref={subMenuRef} onMouseOver={MouseOver}>
                     {subMenu.map((l,idx)=>{
                         return(
                             <div key={idx} className="sub" data-idx={idx}>
@@ -159,6 +161,6 @@ const SubMenu = styled.div`
     left:0;
     background-color: #2C2A29;
     z-index:-1;
-    transition:all .5s ease-in-out;
+    transition:all .3s ease-in-out;
     color:#fff;
 `;

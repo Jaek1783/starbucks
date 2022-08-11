@@ -18,13 +18,13 @@ const SubMenu01 = ()=>{
                         <div data-idx = "0">
                             {l.title}
                             <div data-idx = "0" className="text">
-                                <span>{l.desc01}</span>
-                                <span>{l.desc02}</span>
-                                <span>{l.desc03}</span>
-                                <span>{l.desc04}</span>
-                                <span>{l.desc05}</span>
-                                <span>{l.desc06}</span>
-                                <span>{l.desc07}</span>
+                                <span data-idx = "0">{l.desc01}</span>
+                                <span data-idx = "0">{l.desc02}</span>
+                                <span data-idx = "0">{l.desc03}</span>
+                                <span data-idx = "0">{l.desc04}</span>
+                                <span data-idx = "0" >{l.desc05}</span>
+                                <span data-idx = "0">{l.desc06}</span>
+                                <span data-idx = "0">{l.desc07}</span>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,6 @@ const SubMenu01 = ()=>{
 
 const Container = styled.div`
     max-width:1180px;
-    height:300px;
     margin:0 auto;
     padding-top:1rem;
     display:flex;
@@ -47,7 +46,6 @@ const Container = styled.div`
             width:18%;
             margin-left:1rem;
             margin-bottom:1rem;
-            // text-align:center;
             div.text{
                 font-size:.8rem;
                 font-weight:normal;
