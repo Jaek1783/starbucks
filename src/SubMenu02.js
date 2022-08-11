@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const SubMenu01 = ()=>{
+const SubMenu02 = ()=>{
     const list = [
-        {title:"커피", desc01 : "스타벅스 원두", desc02 :"스타벅스 비아", desc03 : "스타벅스앳홈 by 캡슐", desc04 : "", desc05 : "", desc06 : "", desc07 : ""  },
-        {title:"나와 어울리는 커피", desc01 : "", desc02 :"", desc03 : "", desc04 : "", desc05 : "", desc06 : "", desc07 : ""  },
-        {title:"스타벅스 리저브", desc01 : "RESERVE MAGAZINE", desc02 :"", desc03 : "", desc04 : "", desc05 : "", desc06 : "", desc07 : ""  },
-        {title:"에스프레소 음료", desc01 : "도피오", desc02 :"에스프레소 마키아또", desc03 : "아메리카노", desc04 : "마키아또", desc05 : "카푸치노", desc06 : "라떼", desc07 : "모카" },
-        {title:"최상의 커피를 즐기는 법", desc01 : "커피 프레스", desc02 :"푸어 오버", desc03 :"아이스 푸어 오버", desc04 : "커피 메이커", desc05 : "리저브를 매장에서 다양하게 즐거는 법", desc06 : "", desc07 : ""  },
-        {title:"커피 이야기", desc01 : "농장에서 우리의 손으로", desc02 :"최상의 아라비카 원두", desc03 : "스타벅스 로스트 스펙트럼", desc04 : "스타벅스 디카페인", desc05 : "클로버 커피 추출 시스템", desc06 : "", desc07 : "" },
+        {title:"음료", desc01 : "콜드 브루", desc02 :"브루드 커피", desc03 : "에스프레소", desc04 : "프라푸치노", desc05 : "블렌디드", desc06 : "스타벅스 리프레서", desc07 : "스타벅스 피지오"  },
+        {title:"푸드", desc01 : "", desc02 :"", desc03 : "", desc04 : "", desc05 : "", desc06 : "", desc07 : ""  },
+        {title:"상품", desc01 : "RESERVE MAGAZINE", desc02 :"", desc03 : "", desc04 : "", desc05 : "", desc06 : "", desc07 : ""  },
+        {title:"카드", desc01 : "도피오", desc02 :"에스프레소 마키아또", desc03 : "아메리카노", desc04 : "마키아또", desc05 : "카푸치노", desc06 : "라떼", desc07 : "모카" },
+        {title:"메뉴 이야기", desc01 : "커피 프레스", desc02 :"푸어 오버", desc03 :"아이스 푸어 오버", desc04 : "커피 메이커", desc05 : "리저브를 매장에서 다양하게 즐거는 법", desc06 : "", desc07 : ""  },
     ];
     return(
         <Container>
@@ -30,7 +29,7 @@ const SubMenu01 = ()=>{
             })}
         </Container>
     )
-}; export default SubMenu01;
+}; export default SubMenu02;
 
 const Container = styled.div`
     max-width:1180px;

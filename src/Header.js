@@ -1,18 +1,20 @@
+import { nodeName } from "jquery";
 import React,{useRef, useEffect} from "react";
 import styled from "styled-components";
 import logo from "./img/logo/logo.png";
 import search from "./img/search_icon.png";
 
 import SubMenu01 from "./SubMenu01";
+import SubMenu02 from "./SubMenu02";
 
 const Header = ()=>{
     const subMenu = [
         {id:1, title:"COFFEE", back: "red", desc:<SubMenu01></SubMenu01> },
-        {id:2, title:"MENU", back: "orange"},
-        {id:3, title:"STORE", back: "yellow"},
-        {id:4, title:"RESPONSIBILITY", back: "green"},
-        {id:5, title:"STARBUCKS REWORDS", back: "blue"},
-        {id:6, title:"WHAT'S NEW", back: "purple"},
+        {id:2, title:"MENU", back: "orange", desc:<SubMenu02></SubMenu02> },
+        {id:3, title:"STORE", back: "yellow", desc:<SubMenu01></SubMenu01> },
+        {id:4, title:"RESPONSIBILITY", back: "green", desc:<SubMenu01></SubMenu01> },
+        {id:5, title:"STARBUCKS REWORDS", back: "blue", desc:<SubMenu01></SubMenu01> },
+        {id:6, title:"WHAT'S NEW", back: "purple", desc:<SubMenu01></SubMenu01> },
     ];
 useEffect(()=>{
     const length = subMenuRef.current.children.length;
@@ -23,23 +25,28 @@ useEffect(()=>{
     }
 },[]);
     const MouseOver = (e)=>{
-        console.log("들어왔어");
+        console.log("start");
         const length = subMenuRef.current.children.length;
         for(let i = 0; i < length; i++){
-            if(e.target.dataset.idx === subMenuRef.current.children[i].dataset.idx){
-               const check = e.target.dataset.idx === subMenuRef.current.children[i].dataset.idx;
-               if(check === true){
+            if(subMenuRef.current.children[i] === e.target ){
                 const children = subMenuRef.current.children[i].children[0];
                 children.style.display=`block`;
+                const parents = subMenuRef.current.children[i].style;
+                parents.backgroundColor = "#2C2A29";
+                parents.color="#357d0b";
+                parents.textDecoration = "underline";
                 setTimeout(()=>{
                     children.style.height= 500 + "px";
-                },10);
-               }
+                },1);
             }
             else{
                 const children = subMenuRef.current.children[i].children[0];
                 children.style.height=0;
-                children.style.display=`none`;
+                children.style.display='none';
+                const parents = subMenuRef.current.children[i].style;
+                parents.backgroundColor = "transparent";
+                parents.color="inherit";
+                parents.textDecoration = "none";
                }
         }
     };
@@ -47,18 +54,20 @@ useEffect(()=>{
     const MouseLeave = ()=>{
         const length = subMenuRef.current.children.length;
         for(let i = 0; i < length; i++){
-            const children = subMenuRef.current.children[i].children[0];
-            console.log("stop");
-            children.style.height=0;
-            setTimeout(()=>{
-                children.style.display=`none`;
-            },200);
+        const parents = subMenuRef.current.children[i].style;
+        parents.backgroundColor = "transparent";
+        parents.color="inherit";
+        parents.textDecoration = "none";
+        const children = subMenuRef.current.children[i].children[0];
+        children.style.height=0;
+        setTimeout(()=>{
+            children.style.display='none';
+        },200);
         }
-
     };
     const subMenuRef = useRef(null);
     return(
-        <HeaderStyle  onMouseLeave={MouseLeave}>
+        <HeaderStyle>
             <Container>
             <h1><img src={logo} alt="로고" /></h1>
             <div>
@@ -69,12 +78,12 @@ useEffect(()=>{
                     <div>Find a Store</div>
                     <div><img src={search} alt="검색"/></div>
                 </Gnb>
-                <SubGnb ref={subMenuRef} onMouseOver={MouseOver}>
+                <SubGnb ref={subMenuRef}  >
                     {subMenu.map((l,idx)=>{
                         return(
-                            <div key={idx} className="sub" data-idx={idx}>
+                            <div key={idx} className="sub" onMouseEnter={MouseOver}>
                                 {l.title}
-                                <SubMenu back={l.back} data-idx={idx}>
+                                <SubMenu onMouseLeave={MouseLeave}>
                                     {l.desc}
                                 </SubMenu>
                             </div>
@@ -93,7 +102,7 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-z-index:1;
+z-index:9999;
 height:120px;
 border-top:2px solid #000;
 border-bottom:#ececec;
@@ -137,19 +146,15 @@ padding:1rem 0 1.5rem;
 `;
 const SubGnb = styled.div`
 display:flex;
+z-index:-1;
     div.sub{
         padding:.5rem 2rem 2rem;
         font: normal 13px Avenir, Arial, georgia;
     }
-    div.sub:hover{
-        background-color: #2C2A29;
-        color:#357d0b;
-        text-decoration:underline;
-    }
     // div.sub:hover>div{
     //     height:500px;
     //     display:block;
-    //     transition:all .3s ease-in-out;
+    //     transition:all .7s ease-in-out;
     // }
 `;
 
@@ -160,7 +165,6 @@ const SubMenu = styled.div`
     top:0;
     left:0;
     background-color: #2C2A29;
-    z-index:-1;
     transition:all .3s ease-in-out;
     color:#fff;
 `;
