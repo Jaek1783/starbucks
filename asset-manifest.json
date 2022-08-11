@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/starbucks/static/css/main.23344345.css",
-    "main.js": "/starbucks/static/js/main.5989c609.js",
+    "main.css": "/starbucks/static/css/main.55854f5f.css",
+    "main.js": "/starbucks/static/js/main.7b6a7201.js",
     "static/media/bg.jpeg": "/starbucks/static/media/bg.32dfd6ffb136aefad411.jpeg",
     "static/media/pick.png": "/starbucks/static/media/pick.55c852202db92c827530.png",
     "static/media/visual.png": "/starbucks/static/media/visual.b2311bf4a85f111a0eb1.png",
@@ -21,11 +21,11 @@
     "static/media/logo.png": "/starbucks/static/media/logo.b41bd654180b67006c23.png",
     "static/media/title.png": "/starbucks/static/media/title.9e80714f06f37df1e3aa.png",
     "index.html": "/starbucks/index.html",
-    "main.23344345.css.map": "/starbucks/static/css/main.23344345.css.map",
-    "main.5989c609.js.map": "/starbucks/static/js/main.5989c609.js.map"
+    "main.55854f5f.css.map": "/starbucks/static/css/main.55854f5f.css.map",
+    "main.7b6a7201.js.map": "/starbucks/static/js/main.7b6a7201.js.map"
   },
   "entrypoints": [
-    "static/css/main.23344345.css",
-    "static/js/main.5989c609.js"
+    "static/css/main.55854f5f.css",
+    "static/js/main.7b6a7201.js"
   ]
 }
